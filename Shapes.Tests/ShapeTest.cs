@@ -53,6 +53,8 @@ namespace Shapes.Tests
 				new object[] {() => new Triangle(new[] {1.0, 1.0}), "An array of the incorrect size was passed" },
 				new object[] {() => new Triangle(10, 4, 3), "A triangle with such sides is impossible" },
 				new object[] {() => new Triangle(6, 8, 15), "A triangle with such sides is impossible" },
+				new object[] {() => new Triangle(10, -4, 3), "The side is assigned a negative value" },
+				new object[] {() => new Triangle(6, 8, -15), "The side is assigned a negative value" },
 			};
 	}
 
