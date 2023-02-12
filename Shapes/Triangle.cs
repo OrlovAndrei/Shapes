@@ -11,8 +11,17 @@
 			_sides[0] = side1;
 			_sides[1] = side2;
 			_sides[2] = side3;
-		}		
+		}
 		
+		public bool IsRectangular()
+		{
+			for (int i = 0; i < _sides.Length; i++)
+				if (Math.Pow(_sides[i], 2) == Math.Pow(_sides[(i + 1) % 3], 2) + Math.Pow(_sides[(i + 2) % 3], 2))
+					return true;
+
+			return false;
+		}
+
 		private double GetSquare()
 		{
 			var p = GetPerimeter() / 2;
@@ -26,5 +35,6 @@
 				sum+=_sides[i];
 			return sum;
 		}
+
 	}
 }
