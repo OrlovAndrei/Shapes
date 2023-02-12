@@ -15,8 +15,13 @@ namespace Shapes
 			if (sides.Length != 3) throw new Exception("An array of the incorrect size was passed");
 
 			for (int i = 0; i < sides.Length; i++)
+			{
+				if (sides[i] < 0)
+					throw new Exception("The side is assigned a negative value");
+
 				if (sides[i] > sides[(i + 1) % 3] + sides[(i + 2) % 3])
 					throw new Exception("A triangle with such sides is impossible");
+			}
 
 			for (int i = 0; i < sides.Length; i++)
 				_sides[i] = sides[i];
